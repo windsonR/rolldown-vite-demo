@@ -1,9 +1,9 @@
 import vue from '@vitejs/plugin-vue'
 import { getEnv } from './utils.js'
 import { defineConfig } from 'vite'
-export const buildDevConfig = defineConfig(() => {
+export const buildDevConfig = async () => {
   return {
-    base:'/',
+    base:await getEnv(),
     plugins: [vue()],
   }
-})
+}
